@@ -18,4 +18,10 @@ class OnboardingViewModel : ObservableObject {
     init() {
         
     }
+    
+    func changeTabPage(){
+        if selectedIndex < 2 {
+            selectedIndex += 1
+        }
+    }
 }
