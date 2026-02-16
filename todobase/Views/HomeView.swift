@@ -11,16 +11,17 @@ struct HomeView: View {
     @State private var isShowingSettings = false
     var body: some View {
         NavigationStack {
-            VStack{
+            VStack(alignment: .leading){
                 TabView{
                     DashboardView()
                         .tabItem {
                             Label("Home", systemImage: "house")
                         }
-                    Text("Second")
-                        .tabItem {
-                            Label("List", systemImage: "list.bullet.below.rectangle")
-                        }
+                    RecentTodoListView()
+                    .tabItem {
+                        Label("List", systemImage: "list.bullet.below.rectangle")
+                    }
+                    
                     Text("Third")
                         .tabItem {
                             Label("Notification", systemImage: "bell.badge")
