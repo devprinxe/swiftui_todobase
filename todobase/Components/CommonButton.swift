@@ -17,9 +17,10 @@ struct CommonButton: View {
                 .font(.headline)
                 .foregroundStyle(.white)
                 .padding()
-                .background(.mint)
-                .cornerRadius(12)
         }
+        .frame(maxWidth: .infinity)
+        .background(.brand)
+        .cornerRadius(8)
     }
 }
 

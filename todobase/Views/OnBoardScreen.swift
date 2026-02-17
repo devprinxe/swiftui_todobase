@@ -15,15 +15,15 @@ struct OnBoardScreen: View {
             VStack {
                 TabView(selection: $onboardingViewModel.selectedIndex) {
                     OnboardItem(
-                        title: "Welcome To Todo Base", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "list.bullet.rectangle",
+                        title: "Welcome To Todo Base", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "onboard1",
                     )
                     .tag(0)
                     OnboardItem(
-                        title: "Schedule your tasks", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "person.crop.circle.badge.clock",
+                        title: "Schedule your tasks", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "onboard2",
                     )
                     .tag(1)
                     OnboardItem(
-                        title: "Chase your goals", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "paperplane.circle",
+                        title: "Chase your goals", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "onboard3",
                     )
                     .tag(2)
                 }
@@ -36,8 +36,9 @@ struct OnBoardScreen: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
-                            .background(.mint)
-                            .cornerRadius(12)
+                            .background(.brand)
+                            .frame(maxWidth: 300)
+                            .cornerRadius(8)
                             .padding()
                     }
                     .navigationTitle("Onboarding Complete")

@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct LastFiveTodoList: View {
-    @State private var todos: [TodoModel] = [
-        TodoModel(title: "Do More Exercise", subtitle: "Need to lose 10kg", icon: "figure.walk", status: .completed),
-        TodoModel(title: "Read Swift Books", subtitle: "Finish Chapter 5", icon: "book", status: .inProgress)
-    ]
+    let todos: [Todo]
     var body: some View {
         if todos.count == 0 {
             EmptyViewComponent()
@@ -22,11 +20,11 @@ struct LastFiveTodoList: View {
                     .bold()
                     .foregroundColor(.primary)
                     .padding()
-                TodoListView(todos: $todos)
+                TodoListView(todos: todos)
             }
         }}
 }
 
 #Preview {
-    LastFiveTodoList()
+    //LastFiveTodoList()
 }

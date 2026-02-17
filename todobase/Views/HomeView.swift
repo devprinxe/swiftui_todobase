@@ -6,21 +6,25 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State private var isShowingSettings = false
+    @Query(sort: \Todo.taskStartDate,
+           order: .reverse,) private var todos: [Todo]
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading){
                 TabView{
-                    DashboardView()
+                    DashboardView(todos: todos)
                         .tabItem {
                             Label("Home", systemImage: "house")
                         }
-                    RecentTodoListView()
-                    .tabItem {
-                        Label("List", systemImage: "list.bullet.below.rectangle")
-                    }
+                    RecentTodoListView(todos: todos)
+                        .tabItem {
+                            Label("List", systemImage: "list.bullet.below.rectangle")
+                        }
                     
                     Text("Third")
                         .tabItem {
@@ -49,7 +53,8 @@ struct HomeView: View {
         }
         // 5. Attach the sheet to the view
         .sheet(isPresented: $isShowingSettings) {
-            DashboardView() // The view you want to show
+            AddTaskView()
+                .presentationDetents([.medium, .large])
         }
     }
 }

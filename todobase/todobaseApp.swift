@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct todobaseApp: App {
@@ -13,5 +14,6 @@ struct todobaseApp: App {
         WindowGroup {
             SplashScreen()
         }
+        .modelContainer(for: Todo.self)
     }
 }

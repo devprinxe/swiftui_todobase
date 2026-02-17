@@ -11,6 +11,7 @@ struct StatsCardComponent: View {
     let title: String
     let iconName: String
     let cardColor: Color
+    let count: Int
     
     var body: some View {
         VStack(alignment: .leading){
@@ -25,7 +26,7 @@ struct StatsCardComponent: View {
                 .truncationMode(.tail)                 // Equivalent to TextOverflow.ellipsis
                 .frame(width: 140, alignment: .leading)
                 .padding(.top, 10)
-            Text("100")
+            Text(String(count))
                 .font(.system(size: 30, weight: .bold))
                 .foregroundColor(cardColor)
         }
@@ -36,5 +37,5 @@ struct StatsCardComponent: View {
 }
 
 #Preview {
-    StatsCardComponent(title: "Total Tasks",iconName: "command.circle",cardColor: .mint)
+    StatsCardComponent(title: "Total Tasks",iconName: "command.circle",cardColor: .brand,count: 100)
 }

@@ -14,22 +14,23 @@ struct OnboardItem: View {
     
     var body: some View {
         VStack{
-            Image(systemName: image)
+            Image(image)
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.mint)
-                .frame(width: 100, height: 100)
+                .frame(height: 250)
+                .padding()
             
             Text(title)
                 .font(.largeTitle)
                 .bold()
-                .foregroundColor(.mint)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
                 .padding(EdgeInsets(top: 0, leading:20, bottom: 10, trailing: 20))
             
             Text(subtitle)
                 .font(.subheadline)
-                .foregroundColor(.mint)
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
                 .padding(EdgeInsets(top: 0, leading:20, bottom: 10, trailing: 20))
             
@@ -39,6 +40,6 @@ struct OnboardItem: View {
 
 #Preview {
     OnboardItem(
-        title: "Welcome To Todo Base", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "apple.terminal.on.rectangle",
+        title: "Welcome To Todo Base", subtitle: "Manage your busy life with ease because Todobase is at your service 24/7. Make sure you allow the notification permission to update you on time", image: "onboard1",
     )
 }

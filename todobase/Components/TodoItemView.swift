@@ -15,7 +15,7 @@ struct TodoItemView: View {
     var body: some View {
         HStack(spacing: 15) {
                     Image(systemName: iconName)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(.brand)
                         .frame(width: 30)
                     
                     VStack(alignment: .leading, spacing: 2) {
@@ -34,7 +34,7 @@ struct TodoItemView: View {
                             // 3. Tag must match the @State type (TaskStatusEnum)
                             Text(status.title)
                                 .font(.caption)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.brand)
                                 .tag(status)
                         }
                     }
@@ -43,7 +43,7 @@ struct TodoItemView: View {
                 }
                 .contentShape(Rectangle())
                 .padding()
-                .background(.mint.opacity(0.1))
+                .background(.brand.opacity(0.1))
                 .cornerRadius(8)
     }
 }

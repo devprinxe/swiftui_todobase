@@ -18,7 +18,7 @@ struct SplashScreen: View {
             //MARK: Splash Screen Animation
             ZStack{
                 Rectangle()
-                    .foregroundColor(.mint)
+                    .foregroundColor(.brand)
                     .ignoresSafeArea()
                     .edgesIgnoringSafeArea(.all)
                 VStack {

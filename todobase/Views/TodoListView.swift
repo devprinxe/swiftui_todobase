@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct TodoListView: View {
-    @Binding var todos: [TodoModel]
+    let todos: [Todo]
     var body: some View {
         LazyVStack(spacing: 12){
-            ForEach($todos) { $task in // Using $ to pass a binding to each row
+            ForEach(todos) { task in
                 TodoItemView(
-                    title: task.title ?? "",
-                    subtitle: task.subtitle ?? "",
-                    iconName: task.icon ?? "",
-                    selectedStatus: $task.status
+                    title: task.taskTitle,
+                    subtitle: task.taskDetails,
+                    iconName: task.taskPriority.icon,
+                    selectedStatus: Binding(
+                        get: {task.taskStatus },
+                        set: { task.taskStatus = $0 }
+                    )
                 )
             }
         }
