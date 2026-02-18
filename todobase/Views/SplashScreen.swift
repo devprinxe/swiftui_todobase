@@ -9,10 +9,11 @@ import SwiftUI
 
 struct SplashScreen: View {
     @StateObject var onboardingViewModel = OnboardingViewModel()
-    
+    @AppStorage("isOnboardingComplete") private var isComplete: Bool = false
+
     var body: some View {
         
-        if onboardingViewModel.isOnboardingEnabled{
+        if isComplete{
             OnBoardScreen()
         } else {
             //MARK: Splash Screen Animation

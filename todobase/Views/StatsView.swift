@@ -23,6 +23,7 @@ struct StatsView: View {
             StatsCardComponent(title: "Completed Tasks",iconName: "checkmark.seal",cardColor: .green,count: completedTasks)
             StatsCardComponent(title: "Expired Tasks",iconName: "minus.circle",cardColor: .red,count: expiredTasks)
         }
+        .padding(.top)
     }
 }
 

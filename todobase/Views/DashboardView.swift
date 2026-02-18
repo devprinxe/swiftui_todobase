@@ -14,6 +14,7 @@ struct DashboardView: View {
             StatsView(totalTasks: todos.count, pendingTasks: todos.count(where: { $0.taskStatus == .notStarted }), completedTasks: todos.count(where: { $0.taskStatus == .completed }), expiredTasks: todos.count(where: { $0.taskStatus == .inProgress }))
             LastFiveTodoList(todos: Array(todos.prefix(5)))
         }
+        .scrollIndicators(.hidden)
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
     }

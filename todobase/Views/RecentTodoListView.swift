@@ -20,14 +20,14 @@ struct RecentTodoListView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .init(horizontal: .leading, vertical: .top))
-                        .padding(.vertical)
+                        .padding()
                     TodoListView(todos: todos)
+                        .padding(.horizontal)
                 }
-                .padding()
             }}
     }
 }
 
 #Preview {
-    //RecentTodoListView()
+    RecentTodoListView(todos: [])
 }

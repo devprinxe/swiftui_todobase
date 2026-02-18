@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OnBoardScreen: View {
     @StateObject var onboardingViewModel = OnboardingViewModel()
-    
     var body: some View {
         NavigationStack{
             VStack {
@@ -41,7 +40,6 @@ struct OnBoardScreen: View {
                             .cornerRadius(8)
                             .padding()
                     }
-                    .navigationTitle("Onboarding Complete")
                     .navigationBarHidden(true)
                 } else {
                     CommonButton(

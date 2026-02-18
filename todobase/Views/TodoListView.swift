@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TodoListView: View {
     let todos: [Todo]
+    @State private var selectedTask: Todo?
     var body: some View {
         LazyVStack(spacing: 12){
             ForEach(todos) { task in
@@ -21,11 +22,18 @@ struct TodoListView: View {
                         set: { task.taskStatus = $0 }
                     )
                 )
+                .onTapGesture {
+                    selectedTask = task
+                }
             }
+            .sheet(item: $selectedTask) { task in
+                        AddTaskView(todo: task)
+                            .presentationDetents([.medium, .large])
+                    }
         }
     }
 }
 
 #Preview {
-//    TodoListView()
+   //TodoListView()
 }

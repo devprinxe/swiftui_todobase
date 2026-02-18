@@ -51,9 +51,10 @@ struct HomeView: View {
                 }
             }
         }
+        .toolbarBackground(.visible, for: .navigationBar)
         // 5. Attach the sheet to the view
         .sheet(isPresented: $isShowingSettings) {
-            AddTaskView()
+            AddTaskView(todo: nil)
                 .presentationDetents([.medium, .large])
         }
     }
